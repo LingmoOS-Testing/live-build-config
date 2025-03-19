@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: docker.io/library/debian:trixie-slim
-      options: --privileged -v ${{ github.workspace }}:/work
+      options: --privileged
 
     steps:
       - name: Checkout repository
