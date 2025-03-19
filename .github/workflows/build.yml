@@ -36,6 +36,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: iso
-          path: ${{ github.workspace }}/images/*.iso
+          path: ${{ github.workspace }}/*.iso
           compression-level: 0
           if-no-files-found: error
