@@ -1,0 +1,37 @@
+name: Build ISO Image
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: docker.io/library/debian:trixie-slim
+      options: --privileged
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          apt-get update
+          apt-get install -y sudo git fakeroot live-build debootstrap debian-cd simple-cdd xorriso squashfs-tools debootstrap mtools curl jq
+
+      - name: Build ISO
+        run: lb build
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: iso
+          path: ${{ github.workspace }}/*.iso
+          compression-level: 0
+          if-no-files-found: error

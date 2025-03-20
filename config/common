@@ -87,7 +87,7 @@ LB_UTC_TIME="false"
 
 # Enable color
 # If set here, overrides the command line option
-#_COLOR="auto"
+_COLOR="true"
 
 # Enable force
 # If set here, overrides the command line option
