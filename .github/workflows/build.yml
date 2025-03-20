@@ -26,11 +26,7 @@ jobs:
           apt-get install -y sudo git fakeroot live-build debootstrap debian-cd simple-cdd xorriso squashfs-tools debootstrap mtools curl jq
 
       - name: Build ISO
-        run: |
-          lb clean --purge
-          lb config
-          lb build
-          find .
+        run: lb build
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
