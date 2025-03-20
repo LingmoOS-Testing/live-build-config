@@ -43,7 +43,7 @@ LB_DEBCONF_PRIORITY="critical"
 LB_INITRAMFS="live-boot"
 
 # Set initramfs compression
-LB_INITRAMFS_COMPRESSION="gzip"
+LB_INITRAMFS_COMPRESSION="lzma"
 
 # Set init system
 LB_INITSYSTEM="systemd"
