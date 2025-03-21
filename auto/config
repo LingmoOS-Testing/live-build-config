@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+
+dist="trixie"
+
+lb config noauto \
+	--archive-areas "main contrib non-free non-free-firmware" \
+	--distribution "$dist" \
+	--apt-recommends false \
+	--debootstrap-options "--include=apt-transport-https,ca-certificates,openssl" \
+	--updates true \
+	--backports true \
+	--source false \
+	--firmware-binary true \
+	--firmware-chroot true \
+        --debian-installer none \
+	--uefi-secure-boot enable \
+        --bootloaders "grub-pc grub-efi" \
+	--initramfs live-boot \
+	--initramfs-compression lzma \
+	--win32-loader false \
+	"${@}"
