@@ -18,6 +18,5 @@ lb config noauto \
 	--uefi-secure-boot enable \
 	--bootloaders "grub-pc grub-efi" \
 	--initramfs live-boot \
-	--initramfs-compression lzma \
 	--win32-loader false \
 	"${@}"
