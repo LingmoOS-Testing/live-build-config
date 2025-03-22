@@ -8,6 +8,7 @@ lb config noauto \
 	--color \
 	--archive-areas "main contrib non-free non-free-firmware" \
 	--distribution "$dist" \
+	--apt-indices false \
 	--apt-recommends false \
 	--debootstrap-options "--include=apt-transport-https,ca-certificates,openssl" \
 	--updates true \
