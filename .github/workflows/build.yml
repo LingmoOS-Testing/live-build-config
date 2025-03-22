@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           apt-get update
-          apt-get install -y live-build debootstrap debian-cd simple-cdd xorriso squashfs-tools
+          apt-get install -y live-build debootstrap debian-cd simple-cdd xorriso squashfs-tools memtest86+
 
       - name: Cache
         uses: actions/cache@v4
@@ -35,6 +35,8 @@ jobs:
       - name: Build ISO
         run: |
           lb config
+          # workaround https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=637979
+          sed -i 's/^LB_INITRAMFS_COMPRESSION="lzma"/LB_INITRAMFS_COMPRESSION="gzip"/' config/common
           lb build
 
       - name: Upload Artifact
