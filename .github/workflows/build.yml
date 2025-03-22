@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           apt-get update
-          apt-get install -y live-build debootstrap debian-cd simple-cdd xorriso squashfs-tools memtest86+
+          apt-get install -y live-build debootstrap memtest86+
 
       - name: Cache
         uses: actions/cache@v4
