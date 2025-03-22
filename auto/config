@@ -12,7 +12,6 @@ lb config noauto \
 	--updates true \
 	--backports true \
 	--source false \
-	--firmware-binary true \
 	--firmware-chroot true \
 	--debian-installer none \
 	--uefi-secure-boot enable \
