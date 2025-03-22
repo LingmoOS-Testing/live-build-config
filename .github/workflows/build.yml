@@ -25,6 +25,13 @@ jobs:
           apt-get update
           apt-get install -y sudo git fakeroot live-build debootstrap debian-cd simple-cdd xorriso squashfs-tools debootstrap mtools curl jq
 
+      - name: Cache
+        uses: actions/cache@v4
+        with:
+          path: cache
+          key: ${{ runner.os }}-lb-${{ github.sha }}
+          restore-keys: ${{ runner.os }}-lb-
+
       - name: Build ISO
         run: |
           lb config
