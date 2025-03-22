@@ -1,0 +1,2 @@
+#!/bin/sh
+apt-get -y purge firmware-netronome firmware-nvidia-gsp firmware-nvidia-tesla-gsp
