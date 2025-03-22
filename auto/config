@@ -5,6 +5,7 @@ set -e
 dist="trixie"
 
 lb config noauto \
+	--color \
 	--archive-areas "main contrib non-free non-free-firmware" \
 	--distribution "$dist" \
 	--apt-recommends false \
