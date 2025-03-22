@@ -35,6 +35,8 @@ jobs:
       - name: Build ISO
         run: |
           lb config
+          # workaround https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=637979
+          sed -i 's/^LB_INITRAMFS_COMPRESSION="lzma"/LB_INITRAMFS_COMPRESSION="gzip"/' config/common
           lb build
 
       - name: Upload Artifact
