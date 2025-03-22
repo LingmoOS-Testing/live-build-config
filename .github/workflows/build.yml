@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           apt-get update
-          apt-get install -y sudo git fakeroot live-build debootstrap debian-cd simple-cdd xorriso squashfs-tools debootstrap mtools curl jq
+          apt-get install -y live-build debootstrap debian-cd simple-cdd xorriso squashfs-tools
 
       - name: Cache
         uses: actions/cache@v4
