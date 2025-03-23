@@ -4,4 +4,4 @@ live-config-systemd
 live-tools
 user-setup
 systemd-sysv
-xz-utils
+zstd
