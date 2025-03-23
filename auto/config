@@ -5,20 +5,20 @@ set -e
 dist="trixie"
 
 lb config noauto \
-	--color \
-	--archive-areas "main contrib non-free non-free-firmware" \
-	--distribution "$dist" \
-	--apt-indices false \
-	--apt-recommends false \
-	--debootstrap-options "--variant minbase --include=apt-transport-https,ca-certificates,openssl" \
-	--debconf-frontend noninteractive \
-	--updates true \
-	--backports true \
-	--source false \
-	--firmware-chroot true \
-	--debian-installer none \
-	--uefi-secure-boot enable \
-	--bootloaders "grub-pc grub-efi" \
-	--initramfs live-boot \
-	--win32-loader false \
-	"${@}"
+--color \
+--archive-areas "main contrib non-free non-free-firmware" \
+--distribution "$dist" \
+--apt-indices false \
+--apt-recommends false \
+--debootstrap-options "--variant minbase --include=apt-transport-https,ca-certificates,openssl" \
+--debconf-frontend noninteractive \
+--updates true \
+--backports true \
+--source false \
+--firmware-chroot true \
+--debian-installer none \
+--uefi-secure-boot enable \
+--bootloaders "grub-pc grub-efi" \
+--initramfs live-boot \
+--win32-loader false \
+"${@}"
