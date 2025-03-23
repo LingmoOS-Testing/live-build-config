@@ -11,6 +11,7 @@ lb config noauto \
 	--apt-indices false \
 	--apt-recommends false \
 	--debootstrap-options "--variant minbase --include=apt-transport-https,ca-certificates,openssl,apt-utils" \
+	--debconf-frontend noninteractive \
 	--updates true \
 	--backports true \
 	--source false \
