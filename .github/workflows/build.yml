@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           apt-get update
-          apt-get install --no-install-recommends -y live-build
+          apt-get install --no-install-recommends -y live-build zstd
 
       - name: Cache
         uses: actions/cache@v4
