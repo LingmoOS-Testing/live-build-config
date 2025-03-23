@@ -10,7 +10,7 @@ lb config noauto \
 	--distribution "$dist" \
 	--apt-indices false \
 	--apt-recommends false \
-	--debootstrap-options "--include=apt-transport-https,ca-certificates,openssl" \
+	--debootstrap-options "--variant minbase --include=apt-transport-https,ca-certificates,openssl,apt-utils" \
 	--updates true \
 	--backports true \
 	--source false \
