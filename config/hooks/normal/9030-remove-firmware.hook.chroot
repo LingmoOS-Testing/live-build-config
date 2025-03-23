@@ -1,2 +1,3 @@
 #!/bin/sh
+set
 apt-get -y purge firmware-netronome firmware-nvidia-gsp firmware-nvidia-tesla-gsp nvidia-tesla-470-kernel-support firmware-nvidia-graphics
