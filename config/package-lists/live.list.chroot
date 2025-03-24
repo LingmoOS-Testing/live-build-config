@@ -3,5 +3,6 @@ live-config
 live-config-systemd
 live-tools
 user-setup
+eject
 systemd-sysv
 zstd
