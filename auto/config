@@ -15,7 +15,7 @@ lb config noauto \
 --updates true \
 --backports true \
 --source false \
---firmware-chroot true \
+--firmware-chroot false \
 --debian-installer none \
 --uefi-secure-boot enable \
 --bootloaders "grub-pc grub-efi" \
