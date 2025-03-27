@@ -1,11 +1,11 @@
 FROM debian:trixie-slim
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install --no-install-recommends -y live-build
+    apt-get install --no-install-recommends -y live-build rsync
 VOLUME ["/work","/cache"]
 WORKDIR /work
 CMD sh -c "mkdir -p /work/cache && \
-    cp -a /cache/. /work/cache/ && \
+    rsync -a /cache/ /work/cache/ && \
     lb config && \
     lb build && \
-    cp -a /work/cache/. /cache/"
+    rsync -a /work/cache/ /cache/"
