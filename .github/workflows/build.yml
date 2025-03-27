@@ -36,16 +36,13 @@ jobs:
       - name: Cache live-build cache
         uses: actions/cache@v4
         with:
-          path: cache
+          path: cache.tar
           key: ${{ runner.os }}-lb-${{ github.sha }}
           restore-keys: ${{ runner.os }}-lb-
 
       - name: Run builder
         run: |
-          docker run --rm --privileged \
-            -v ${{ github.workspace }}:/work \
-            -v ${{ github.workspace }}/cache:/cache \
-            builder
+          docker run --rm --privileged -v ${{ github.workspace }}:/work builder
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4

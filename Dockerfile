@@ -2,10 +2,9 @@ FROM debian:trixie-slim
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install --no-install-recommends -y live-build
-VOLUME ["/work","/cache"]
+VOLUME ["/work"]
 WORKDIR /work
-CMD sh -c "mkdir -p /work/cahce && \
-    cp -a /cache/. /work/cache && \
+CMD ([ -f cache.tar ] && tar -xf cache.tar) ; \
     lb config && \
     lb build && \
-    cp -a /work/cache/. /cache"
+    tar -cf cache.tar cache"
