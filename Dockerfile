@@ -5,7 +5,7 @@ RUN apt-get update && \
 VOLUME ["/work","/cache"]
 WORKDIR /work
 CMD sh -c "mkdir -p /work/cahce && \
-    cp -r /cache/* /work/cache && \
+    cp -a /cache/. /work/cache && \
     lb config && \
     lb build && \
-    cp -r /work/cache/* /cache"
+    cp -a /work/cache/. /cache"
