@@ -11,30 +11,41 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: docker.io/library/debian:trixie-slim
-      options: --privileged
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: |
-          apt-get update
-          apt-get install --no-install-recommends -y live-build zstd
+      - name: Cache Docker image
+        uses: actions/cache@v4
+        with:
+          path: docker_image_cache.tar
+          key: ${{ runner.os }}-docker-${{ github.sha }}
+          restore-keys: ${{ runner.os }}-docker-
 
-      - name: Cache
+      - name: Load or build Docker image
+        run: |
+          if [ -f docker_image_cache.tar ]; then
+            docker load -i docker_image_cache.tar
+          else
+            docker build -t builder \
+              https://github.com/LingmoOS-Testing/live-build-config.git
+            docker save builder -o docker_image_cache.tar
+          fi
+
+      - name: Cache live-build cache
         uses: actions/cache@v4
         with:
           path: cache
           key: ${{ runner.os }}-lb-${{ github.sha }}
           restore-keys: ${{ runner.os }}-lb-
 
-      - name: Build ISO
+      - name: Run builder
         run: |
-          lb config
-          lb build
+          docker run --rm --privileged \
+            -v ${{ github.workspace }}:/work \
+            -v ${{ github.workspace }}/cache:/work/cache \
+            builder
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
