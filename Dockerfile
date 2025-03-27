@@ -1,4 +1,4 @@
-MAINTAINER Lingmo OS Team
+MAINTAINER "Lingmo OS Team"
 FROM debian:trixie-slim
 RUN apt-get update && \
     apt-get upgrade && \
