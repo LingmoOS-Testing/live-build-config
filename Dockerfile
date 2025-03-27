@@ -1,6 +1,6 @@
 FROM debian:trixie-slim
 RUN apt-get update && \
-    apt-get upgrade && \
+    apt-get upgrade -y && \
     apt-get install --no-install-recommends -y live-build
 VOLUME ["/work"]
 WORKDIR /work
