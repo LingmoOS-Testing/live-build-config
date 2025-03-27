@@ -44,7 +44,7 @@ jobs:
         run: |
           docker run --rm --privileged \
             -v ${{ github.workspace }}:/work \
-            -v ${{ github.workspace }}/cache:/work/cache \
+            -v ${{ github.workspace }}/cache:/cache \
             builder
 
       - name: Upload Artifact
