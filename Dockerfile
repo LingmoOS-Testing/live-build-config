@@ -4,7 +4,7 @@ RUN apt-get update && \
     apt-get install --no-install-recommends -y live-build
 VOLUME ["/work"]
 WORKDIR /work
-CMD "([ -f cache.tar ] && tar -xf cache.tar) ; \
+CMD sh -c "([ -f cache.tar ] && tar -xf cache.tar) ; \
     lb config && \
     lb build && \
     tar -cf cache.tar cache"
