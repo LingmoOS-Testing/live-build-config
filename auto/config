@@ -22,5 +22,6 @@ lb config noauto \
 --initramfs live-boot \
 --chroot-squashfs-compression-type zstd \
 --chroot-squashfs-compression-level 3 \
+--memtest memtest86+ \
 --win32-loader false \
 "${@}"
