@@ -1,4 +1,8 @@
-network-manager-gnome
-network-manager-openvpn-gnome
-iw
+network-manager
+network-manager-applet
+network-manager-openvpn
 wpasupplicant
+modemmanager
+iw
+rfkill
+wireless-regdb
