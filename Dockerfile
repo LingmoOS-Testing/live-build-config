@@ -9,7 +9,7 @@ RUN apt-get update && \
         $(case $(uname -m) in \
             x86_64) echo grub-pc-bin grub-efi-amd64-bin \
                     grub-efi-ia32-bin grub-efi-amd64-signed \
-                    shim-helpers-amd64-signed;; \
+                    shim-helpers-amd64-signed memtest86+;; \
             aarch64) echo grub-efi-arm64-bin grub-efi-arm64-signed \
                     shim-helpers-arm64-signed;; \
         esac)
