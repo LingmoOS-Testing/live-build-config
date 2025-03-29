@@ -6,25 +6,3 @@ user-setup
 eject
 systemd-sysv
 zstd
-
-dctrl-tools
-dosfstools
-mtools
-xorriso
-mokutil
-librsvg2-2
-isolinux
-squashfs-tools
-shim-signed
-#if ARCHITECTURES amd64
-grub-pc-bin
-grub-efi-amd64-bin
-grub-efi-ia32-bin
-grub-efi-amd64-signed
-shim-helpers-amd64-signed
-#endif
-#if ARCHITECTURES arm64
-grub-efi-arm64-bin
-grub-efi-arm64-signed
-shim-helpers-arm64-signed
-#endif

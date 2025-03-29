@@ -6,6 +6,7 @@ dist="trixie"
 
 lb config noauto \
 --color \
+--build-with-chroot false \
 --archive-areas "main contrib non-free non-free-firmware" \
 --apt-source-archives false \
 --distribution "$dist" \
