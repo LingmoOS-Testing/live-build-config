@@ -6,11 +6,19 @@ user-setup
 eject
 systemd-sysv
 zstd
+
+dosfstools
+mtools
+xorriso
+mokutil
+shim-signed
 #if ARCHITECTURES amd64
 grub-pc-bin
 grub-efi-amd64-bin
 grub-efi-ia32-bin
+shim-helpers-amd64-signed
 #endif
 #if ARCHITECTURES arm64
 grub-efi-arm64-bin
+shim-helpers-arm64-signed
 #endif
