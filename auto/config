@@ -7,6 +7,7 @@ dist="trixie"
 lb config noauto \
 --color \
 --archive-areas "main contrib non-free non-free-firmware" \
+--apt-source-archives false \
 --distribution "$dist" \
 --apt-indices false \
 --apt-recommends false \
