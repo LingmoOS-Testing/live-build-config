@@ -1,5 +1,3 @@
-xserver-xorg
-x11-xserver-utils
-xauth
+sddm
 xinit
-xterm
+x11-xserver-utils
