@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 firmwares=(
     firmware-carl9170
     firmware-linux-free
