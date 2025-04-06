@@ -28,7 +28,6 @@ firmwares=(
     firmware-myricom
     firmware-netronome
     firmware-netxen
-    firmware-nvidia-graphics
     firmware-qlogic
     firmware-realtek
     firmware-siano
