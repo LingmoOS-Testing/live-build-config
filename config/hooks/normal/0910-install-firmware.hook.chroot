@@ -10,7 +10,6 @@ firmwares=(
     bluez-firmware
     firmware-amd-graphics
     firmware-ast
-    firmware-atheros
     firmware-bnx2
     firmware-bnx2x
     firmware-brcm80211
@@ -21,7 +20,6 @@ firmwares=(
     firmware-ipw2x00
     firmware-ivtv
     firmware-iwlwifi
-    firmware-libertas
     firmware-marvell-prestera
     firmware-mediatek
     firmware-misc-nonfree
