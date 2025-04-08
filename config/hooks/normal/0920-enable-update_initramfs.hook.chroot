@@ -1,3 +1,6 @@
 #!/bin/sh
 # To prevent multiple initramfs rebuilds (final initramfs will be built by chroot_hacks)
 sed -i 's/^update_initramfs=no/update_initramfs=yee/' /etc/initramfs-tools/update-initramfs.conf
+
+# Remove the dpkg.cfg file that solves the configuration conflict
+rm -f /etc/dpkg/dpkg.cfg.d/force-confold.cfg
