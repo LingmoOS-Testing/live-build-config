@@ -1,6 +1,5 @@
 sddm
 xinit
-x11-xserver-utils
 kwin-x11
 liblingmo
 lingmoui3
