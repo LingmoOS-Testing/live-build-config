@@ -9,7 +9,7 @@ lb config noauto \
 --build-with-chroot false \
 --archive-areas "main contrib non-free non-free-firmware" \
 --apt-source-archives false \
---apt-options "--dpkg-options force-confold" \
+--apt-options '-o Dpkg::Options::="--force-confold"' \
 --distribution "$dist" \
 --apt-indices false \
 --apt-recommends false \
