@@ -1,0 +1,5 @@
+#!/bin/sh
+locale-gen --keep-existing
+sed -i 's/^USE_DPKG/#USE_DPKG/' /etc/locale.nopurge
+localepurge
+sed -i 's/^#USE_DPKG/USE_DPKG/' /etc/locale.nopurge

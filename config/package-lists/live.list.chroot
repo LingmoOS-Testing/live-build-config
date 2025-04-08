@@ -5,4 +5,4 @@ live-tools
 user-setup
 eject
 systemd-sysv
-zstd
+localepurge
