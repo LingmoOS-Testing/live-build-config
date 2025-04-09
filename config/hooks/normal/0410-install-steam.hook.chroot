@@ -1,0 +1,3 @@
+#!/bin/sh
+[ "$(uname -m)" = x86_64 ] || exit
+apt-get --no-install-recommends install steam-installer
