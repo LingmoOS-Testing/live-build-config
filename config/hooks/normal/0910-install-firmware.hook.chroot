@@ -34,7 +34,6 @@ firmwares=(
 amd64_firmwares=(
     amd64-microcode
     firmware-intel-sound
-    firmware-sof-signed
     intel-microcode
 )
 
