@@ -1,3 +1,5 @@
+gparted
+xarchiver
 flatpak
 gnome-software-plugin-flatpak
 firefox-esr
@@ -6,3 +8,4 @@ remmina
 remmina-plugin-rdp
 remmina-plugin-vnc
 remmina-plugin-secret
+obs-studio
