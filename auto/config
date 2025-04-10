@@ -1,71 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 set -e
 
 dist="trixie"
-
-firmwares=(
-    firmware-carl9170
-    firmware-linux-free
-    alsa-topology-conf
-    firmware-ath9k-htc
-    wireless-regdb
-    dahdi-firmware-nonfree
-    atmel-firmware
-    bluez-firmware
-    firmware-amd-graphics
-    firmware-ast
-    firmware-bnx2
-    firmware-bnx2x
-    firmware-brcm80211
-    firmware-cavium
-    firmware-cirrus
-    firmware-intel-graphics
-    firmware-intel-misc
-    firmware-ipw2x00
-    firmware-ivtv
-    firmware-iwlwifi
-    firmware-marvell-prestera
-    firmware-mediatek
-    firmware-misc-nonfree
-    firmware-myricom
-    firmware-netxen
-    firmware-qlogic
-    firmware-realtek
-    firmware-siano
-    firmware-zd1211
-)
-
-amd64_firmwares=(
-    amd64-microcode
-    firmware-intel-sound
-    intel-microcode
-)
-
-arm64_firmwares=(
-    arm-trusted-firmware-tools
-    crust-firmware
-    firmware-qcom-soc
-    firmware-samsung
-    firmware-ti-connectivity
-    raspi-firmware
-)
-
-case "$(uname -m)" in
-x86_64)
-    firmwares+=("${amd64_firmwares[@]}")
-    ;;
-aarch64)
-    firmwares+=("${arm64_firmwares[@]}")
-    ;;
-esac
-
-fw_packages=$(IFS=','; printf '%s' "${firmwares[*]}")
-
-DEBOOTSTRAP_SETUP_HOOK='echo "firmware-ipw2x00 firmware-ipw2x00/license/accepted boolean true" | chroot "$TARGET" debconf-set-selections'
-DEBOOTSTRAP_OPTS="--variant minbase \
-  --include=apt-transport-https,ca-certificates,openssl,${fw_packages} \
-  --setup-hook \"${DEBOOTSTRAP_SETUP_HOOK}\""
 
 lb config noauto \
 --color \
@@ -76,7 +13,7 @@ lb config noauto \
 --distribution "$dist" \
 --apt-indices false \
 --apt-recommends false \
---debootstrap-options "${DEBOOTSTRAP_OPTS}" \
+--debootstrap-options "--variant minbase --include=apt-transport-https,ca-certificates,openssl" \
 --debconf-frontend noninteractive \
 --updates true \
 --backports true \

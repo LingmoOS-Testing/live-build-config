@@ -1,0 +1,61 @@
+#!/bin/bash
+firmwares=(
+    firmware-carl9170
+    firmware-linux-free
+    alsa-topology-conf
+    firmware-ath9k-htc
+    wireless-regdb
+    dahdi-firmware-nonfree
+    atmel-firmware
+    bluez-firmware
+    firmware-amd-graphics
+    firmware-ast
+    firmware-bnx2
+    firmware-bnx2x
+    firmware-brcm80211
+    firmware-cavium
+    firmware-cirrus
+    firmware-intel-graphics
+    firmware-intel-misc
+    firmware-ipw2x00
+    firmware-ivtv
+    firmware-iwlwifi
+    firmware-marvell-prestera
+    firmware-mediatek
+    firmware-misc-nonfree
+    firmware-myricom
+    firmware-netxen
+    firmware-qlogic
+    firmware-realtek
+    firmware-siano
+    firmware-zd1211
+)
+
+amd64_firmwares=(
+    amd64-microcode
+    firmware-intel-sound
+    intel-microcode
+)
+
+arm64_firmwares=(
+    arm-trusted-firmware-tools
+    crust-firmware
+    firmware-qcom-soc
+    firmware-samsung
+    firmware-ti-connectivity
+    raspi-firmware
+)
+
+case "$(uname -m)" in
+x86_64)
+    firmwares+=("${amd64_firmwares[@]}")
+    ;;
+aarch64)
+    firmwares+=("${arm64_firmwares[@]}")
+    ;;
+esac
+
+echo "firmware-ipw2x00 firmware-ipw2x00/license/accepted boolean true" | debconf-set-selections
+echo "firmware-ivtv firmware-ivtv/license/accepted boolean true" | debconf-set-selections
+
+apt-get -y install "${firmwares[@]}"
