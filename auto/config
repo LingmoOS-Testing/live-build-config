@@ -71,7 +71,7 @@ lb config noauto \
 --distribution "$dist" \
 --apt-indices false \
 --apt-recommends false \
---debootstrap-options "--variant minbase --include=apt-transport-https,ca-certificates,openssl,${fw_packages}" \
+--debootstrap-options "--variant minbase --include=apt-transport-https,ca-certificates,openssl,${fw_packages} --setup-hook='echo \"firmware-ipw2x00 firmware-ipw2x00/license/accepted boolean true\" | chroot \"\$TARGET\" debconf-set-selections'" \
 --debconf-frontend noninteractive \
 --updates true \
 --backports true \
