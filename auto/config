@@ -62,6 +62,11 @@ esac
 
 fw_packages=$(IFS=','; printf '%s' "${firmwares[*]}")
 
+DEBOOTSTRAP_SETUP_HOOK='echo "firmware-ipw2x00 firmware-ipw2x00/license/accepted boolean true" | chroot "$TARGET" debconf-set-selections'
+DEBOOTSTRAP_OPTS="--variant minbase \
+  --include=apt-transport-https,ca-certificates,openssl,${fw_packages} \
+  --setup-hook \"${DEBOOTSTRAP_SETUP_HOOK}\""
+
 lb config noauto \
 --color \
 --build-with-chroot false \
@@ -71,7 +76,7 @@ lb config noauto \
 --distribution "$dist" \
 --apt-indices false \
 --apt-recommends false \
---debootstrap-options "--variant minbase --include=apt-transport-https,ca-certificates,openssl,${fw_packages} --setup-hook='echo \"firmware-ipw2x00 firmware-ipw2x00/license/accepted boolean true\" | chroot \"\$TARGET\" debconf-set-selections'" \
+--debootstrap-options "${DEBOOTSTRAP_OPTS}" \
 --debconf-frontend noninteractive \
 --updates true \
 --backports true \
