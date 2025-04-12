@@ -59,9 +59,10 @@ aarch64)
 esac
 
 fw_packages=$(IFS=','; printf '%s' "${firmwares[*]}")
+huge_packages="sddm,kwin-x11"
 
 DEBOOTSTRAP_OPTS="--variant minbase \
-  --include=apt-transport-https,ca-certificates,openssl,${fw_packages}"
+  --include=apt-transport-https,ca-certificates,openssl,${fw_packages},${huge_packages}"
 
 lb config noauto \
 --color \

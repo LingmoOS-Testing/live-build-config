@@ -1,8 +1,6 @@
 fonts-wqy-zenhei
-sddm
 xinit
 x11-xserver-utils
-kwin-x11
 liblingmo
 lingmoui3
 lingmo-core
