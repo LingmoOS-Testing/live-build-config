@@ -4,5 +4,4 @@ live-config-systemd
 live-tools
 user-setup
 eject
-systemd-sysv
 localepurge
