@@ -23,7 +23,6 @@ firmwares=(
     firmware-intel-graphics
     firmware-intel-misc
     firmware-ipw2x00
-    firmware-ivtv
     firmware-iwlwifi
     firmware-marvell-prestera
     firmware-mediatek
@@ -62,10 +61,8 @@ esac
 
 fw_packages=$(IFS=','; printf '%s' "${firmwares[*]}")
 
-DEBOOTSTRAP_SETUP_HOOK='echo "firmware-ipw2x00 firmware-ipw2x00/license/accepted boolean true" | chroot "$TARGET" debconf-set-selections'
 DEBOOTSTRAP_OPTS="--variant minbase \
-  --include=apt-transport-https,ca-certificates,openssl,${fw_packages} \
-  --setup-hook \"${DEBOOTSTRAP_SETUP_HOOK}\""
+  --include=apt-transport-https,ca-certificates,openssl,${fw_packages}"
 
 lb config noauto \
 --color \
