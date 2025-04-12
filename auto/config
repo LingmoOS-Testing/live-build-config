@@ -10,7 +10,6 @@ firmwares=(
     alsa-topology-conf
     firmware-ath9k-htc
     wireless-regdb
-    dahdi-firmware-nonfree
     atmel-firmware
     bluez-firmware
     firmware-amd-graphics
@@ -23,14 +22,12 @@ firmwares=(
     firmware-intel-graphics
     firmware-intel-misc
     firmware-iwlwifi
-    firmware-marvell-prestera
     firmware-mediatek
     firmware-misc-nonfree
     firmware-myricom
     firmware-netxen
     firmware-qlogic
     firmware-realtek
-    firmware-siano
     firmware-zd1211
 )
 
