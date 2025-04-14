@@ -6,3 +6,7 @@ xdg-desktop-portal-gtk
 falkon
 vlc
 vlc-l10n
+remmina
+remmina-plugin-rdp
+remmina-plugin-vnc
+remmina-plugin-secret
