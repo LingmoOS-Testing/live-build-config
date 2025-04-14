@@ -1,4 +1,3 @@
 #!/bin/sh
 [ "$(uname -m)" = x86_64 ] || exit
 dpkg --add-architecture i386
-apt-get update
