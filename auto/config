@@ -56,10 +56,22 @@ aarch64)
 esac
 
 fw_packages=$(IFS=','; printf '%s' "${firmwares[*]}")
-extra_packages="debian-archive-keyring,systemd-sysv,libpam-systemd,dbus-broker,sddm,kwin-x11"
+extra_packages=(
+    apt-transport-https
+    ca-certificates
+    openssl
+    debian-archive-keyring
+    systemd-sysv
+    libpam-systemd
+    dbus-broker
+    sddm
+    kwin-x11
+    firefox-esr
+    vlc
+)
 
 DEBOOTSTRAP_OPTS="--variant minbase \
-  --include=apt-transport-https,ca-certificates,openssl,${fw_packages},${extra_packages}"
+ --include=$(IFS=','; printf '%s' "${extra_packages[*]},${firmwares[*]}")"
 
 lb config noauto \
 --color \
