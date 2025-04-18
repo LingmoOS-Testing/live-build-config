@@ -4,7 +4,3 @@ flatpak
 gnome-software-plugin-flatpak
 xdg-desktop-portal-gtk
 firefox-esr-l10n-zh-cn
-remmina
-remmina-plugin-rdp
-remmina-plugin-vnc
-remmina-plugin-secret
