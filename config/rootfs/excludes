@@ -1,2 +1,2 @@
-initrd.img
+var/cache/*
 boot/initrd*
