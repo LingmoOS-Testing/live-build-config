@@ -68,7 +68,6 @@ extra_packages=(
     sddm
     kwin-x11
     firefox-esr
-    vlc
 )
 
 DEBOOTSTRAP_OPTS="--variant minbase \
