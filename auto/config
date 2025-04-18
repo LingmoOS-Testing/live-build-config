@@ -92,7 +92,7 @@ lb config noauto \
 --uefi-secure-boot enable \
 --bootloaders "grub-pc grub-efi" \
 --initramfs live-boot \
---chroot-squashfs-compression-type xz \
+--chroot-squashfs-compression-type "xz -Xbcj x86 -Xdict-size 1M -b 1M" \
 --memtest memtest86+ \
 --win32-loader false \
 "${@}"
