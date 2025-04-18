@@ -12,7 +12,6 @@ firmwares=(
     wireless-regdb
     atmel-firmware
     bluez-firmware
-    firmware-amd-graphics
     firmware-ast
     firmware-bnx2
     firmware-bnx2x
