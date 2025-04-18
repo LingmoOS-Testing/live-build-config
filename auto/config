@@ -73,6 +73,8 @@ extra_packages=(
 DEBOOTSTRAP_OPTS="--variant minbase \
  --include=$(IFS=','; printf '%s' "${extra_packages[*]},${firmwares[*]}")"
 
+test -e config/rootfs/excludes
+
 lb config noauto \
 --color \
 --build-with-chroot false \
@@ -92,7 +94,7 @@ lb config noauto \
 --uefi-secure-boot enable \
 --bootloaders "grub-pc grub-efi" \
 --initramfs live-boot \
---chroot-squashfs-compression-type "xz -Xbcj x86,arm -Xdict-size 1M -b 1M -wildcards -ef config/rootfs/excludes" \
+--chroot-squashfs-compression-type "xz -Xbcj x86,arm -Xdict-size 1M -b 1M -wildcards -ef $(pwd)/config/rootfs/excludes" \
 --memtest memtest86+ \
 --win32-loader false \
 "${@}"
