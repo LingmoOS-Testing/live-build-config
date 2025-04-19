@@ -1,4 +1,5 @@
 #!/bin/sh
+rm /etc/live/boot.conf
 mount -o remount,rw,bind /live-build/config
 mv /boot/initrd.img-* /live-build/config
 mount -o remount,ro,bind /live-build/config
