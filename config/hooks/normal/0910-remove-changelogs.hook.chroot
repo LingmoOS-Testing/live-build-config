@@ -1,2 +1,2 @@
 #!/bin/sh
-find /usr/share/doc -type f -name "changelog.gz"
+find /usr/share/doc -type f -name "changelog.gz" -delete
