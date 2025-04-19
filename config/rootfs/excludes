@@ -1,3 +1,3 @@
 var/cache/*
 boot/initrd*
-
+boot/initrd.img-6.12.21-amd64
