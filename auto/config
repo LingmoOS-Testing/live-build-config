@@ -72,6 +72,9 @@ extra_packages=(
 DEBOOTSTRAP_OPTS="--variant minbase \
  --include=$(IFS=','; printf '%s' "${extra_packages[*]},${firmwares[*]}")"
 
+rm /usr/bin/mksquashfs
+ln -s /usr/bin/echo /usr/bin/mksquashfs
+
 lb config noauto \
 --color \
 --build-with-chroot false \
