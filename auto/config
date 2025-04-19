@@ -66,7 +66,6 @@ extra_packages=(
     dbus-user-session
     sddm
     kwin-x11
-    firefox-esr
 )
 
 DEBOOTSTRAP_OPTS="--variant minbase \
