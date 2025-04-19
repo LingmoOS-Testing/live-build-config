@@ -1,4 +1,4 @@
 #!/bin/sh
 extrepo enable librewolf
 apt update
-apt install librewolf -y
+apt install librewolf -y --no-install-recommends
