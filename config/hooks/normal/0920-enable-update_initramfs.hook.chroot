@@ -1,3 +1,0 @@
-#!/bin/sh
-# To prevent multiple initramfs rebuilds (final initramfs will be built by chroot_hacks)
-sed -i 's/^update_initramfs=no/update_initramfs=yes/' /etc/initramfs-tools/update-initramfs.conf

@@ -1,0 +1,2 @@
+#!/bin/sh
+touch /initrd.img_has_already_been_regenerated
