@@ -1,6 +1,6 @@
 xz-utils
 sudo
-busybox
+busybox-static
 nano
 fastfetch
 htop
