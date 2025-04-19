@@ -1,0 +1,2 @@
+#!/bin/sh
+find /usr/share/doc -type f -name "changelog.gz"
