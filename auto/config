@@ -15,7 +15,6 @@ firmwares=(
     firmware-ast
     firmware-brcm80211
     firmware-cirrus
-    firmware-intel-graphics
     firmware-intel-misc
     firmware-iwlwifi
     firmware-mediatek
