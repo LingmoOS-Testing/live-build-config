@@ -4,8 +4,7 @@ RUN apt-get update && \
     apt-get install --no-install-recommends -y \
         expect live-build dctrl-tools dosfstools \
         mtools xorriso mokutil librsvg2-2 isolinux \
-        squashfs-tools shim-signed librsvg2-bin && \
-    apt-get install --no-install-recommends -y \
+        squashfs-tools shim-signed librsvg2-bin \
         $(case $(uname -m) in \
             x86_64) echo grub-pc-bin grub-efi-amd64-bin \
                     grub-efi-ia32-bin grub-efi-amd64-signed \
