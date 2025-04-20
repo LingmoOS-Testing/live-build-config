@@ -12,6 +12,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+        matrix:
+          arch: ['amd64']
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -20,8 +24,8 @@ jobs:
         uses: actions/cache@v4
         with:
           path: docker_image_cache.tar
-          key: ${{ runner.os }}-docker-${{ github.sha }}
-          restore-keys: ${{ runner.os }}-docker-
+          key: ${{ runner.os }}-${{ matrix.arch }}-docker-${{ github.sha }}
+          restore-keys: ${{ runner.os }}-${{ matrix.arch }}-docker-
 
       - name: Load or build Docker image
         run: |
@@ -37,8 +41,8 @@ jobs:
         uses: actions/cache@v4
         with:
           path: cache.tar
-          key: ${{ runner.os }}-lb-${{ github.sha }}
-          restore-keys: ${{ runner.os }}-lb-
+          key: ${{ runner.os }}-${{ matrix.arch }}-lb-${{ github.sha }}
+          restore-keys: ${{ runner.os }}-${{ matrix.arch }}-lb-
 
       - name: Run builder
         run: |
@@ -47,7 +51,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: iso
+          name: ${{ matrix.arch }}
           path: ${{ github.workspace }}/*.iso
           compression-level: 0
           if-no-files-found: error
