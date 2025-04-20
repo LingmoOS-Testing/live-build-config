@@ -86,5 +86,6 @@ lb config noauto \
 --initramfs live-boot \
 --chroot-squashfs-compression-type "xz -Xbcj $(case $(uname -m) in x86_64) echo x86;; aarch64) echo arm;; esac) -Xdict-size 1M -b 1M" \
 --memtest memtest86+ \
+--bootappend-live "boot=live config" \
 --win32-loader false \
 "${@}"
