@@ -1,0 +1,2 @@
+#!/bin/sh
+find /usr/share/doc -type f -not \( -name "copyright*" -o -name "README*" \) -delete
