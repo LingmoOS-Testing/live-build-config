@@ -59,6 +59,7 @@ extra_packages=(
     dbus-user-session
     sddm
     kwin-x11
+    epiphany-browser
 )
 
 DEBOOTSTRAP_OPTS="--variant minbase \
