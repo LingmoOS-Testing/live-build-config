@@ -86,6 +86,7 @@ lb config noauto \
 --initramfs live-boot \
 --chroot-squashfs-compression-type "xz -Xbcj $(case $(uname -m) in x86_64) echo x86;; aarch64) echo arm;; esac) -Xdict-size 1M -b 1M" \
 --memtest memtest86+ \
---bootappend-live "boot=live config" \
+--bootappend-live "boot=live components" \
+--bootappend-live-failsafe "boot=live components noapic noapm nodma nomce nosmp vga=788" \
 --win32-loader false \
 "${@}"
