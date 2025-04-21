@@ -2,8 +2,8 @@ FROM debian:trixie-slim
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install --no-install-recommends -y \
-        expect live-build dctrl-tools dosfstools \
-        mtools xorriso mokutil librsvg2-2 isolinux \
+        live-build dctrl-tools dosfstools mtools \
+        xorriso mokutil librsvg2-2 isolinux \
         squashfs-tools shim-signed librsvg2-bin \
         $(case $(uname -m) in \
             x86_64) echo grub-pc-bin grub-efi-amd64-bin \
@@ -16,5 +16,5 @@ VOLUME ["/work"]
 WORKDIR /work
 CMD sh -c "([ -f cache.tar ] && tar -xf cache.tar) ; \
     lb config && \
-    unbuffer lb build && \
+    lb build && \
     tar -cf cache.tar cache"
