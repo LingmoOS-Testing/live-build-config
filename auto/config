@@ -58,8 +58,7 @@ extra_packages=(
     dbus-user-session
     sddm
     kwin-x11
-    plasma-discover-backend-flatpak
-    falkon
+    firefox-esr
 )
 
 DEBOOTSTRAP_OPTS="--variant minbase \
