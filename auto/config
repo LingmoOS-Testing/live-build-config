@@ -58,7 +58,8 @@ extra_packages=(
     dbus-user-session
     sddm
     kwin-x11
-    firefox-esr
+    gnome-software-plugin-flatpak
+    epiphany-browser
 )
 
 DEBOOTSTRAP_OPTS="--variant minbase \

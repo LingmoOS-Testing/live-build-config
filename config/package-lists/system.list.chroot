@@ -2,5 +2,6 @@ xz-utils
 sudo
 busybox-static
 nano
+vim-tiny
 fastfetch
 htop
