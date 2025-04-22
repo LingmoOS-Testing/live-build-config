@@ -57,6 +57,7 @@ extra_packages=(
     dbus-broker
     dbus-user-session
     gir1.2-glib-2.0
+    gir1.2-freedesktop
     sddm
     kwin-x11
     gnome-software-plugin-flatpak
