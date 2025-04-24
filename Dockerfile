@@ -3,7 +3,7 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install --no-install-recommends -y \
         live-build dctrl-tools dosfstools mtools \
-        xorriso mokutil librsvg2-2 isolinux \
+        xorriso mokutil librsvg2-2 isolinux eatmydata \
         squashfs-tools shim-signed librsvg2-bin \
         $(case $(uname -m) in \
             x86_64) echo grub-pc-bin grub-efi-amd64-bin \
