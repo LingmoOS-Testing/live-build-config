@@ -69,6 +69,7 @@ DEBOOTSTRAP_OPTS="--variant minbase \
 
 lb config noauto \
 --color \
+--clean \
 --build-with-chroot false \
 --archive-areas "main contrib non-free non-free-firmware" \
 --apt-source-archives false \
