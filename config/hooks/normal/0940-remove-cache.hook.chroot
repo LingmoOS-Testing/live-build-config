@@ -1,3 +1,2 @@
 #!/bin/sh
-rm -vr /var/cache/apt/
 rm -vr /var/cache/swcatalog/cache/
